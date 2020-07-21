@@ -1,4 +1,4 @@
-﻿//TALHA BEĞENDİ
+//TALHA BEĞENDİ
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,7 +71,7 @@ namespace LCWaikikiTest
             urunSecme.UrunFotoKapatButton();
         }
         [Test]
-        //[Test, Category("04_Urun_Favori_Ekle_Test")]
+        //[Test, Category("04_Urun_Favori_Ekle_Sil_Test")]
         public void Test_04_Senaryo_01_UrunFav_Ekle_Sil()
         {
             LCWaikikiMethods urunFavEkleSil = new LCWaikikiMethods(Webdriver);
@@ -83,7 +83,7 @@ namespace LCWaikikiTest
             Assert.IsTrue(urunFavEkleSilAssert.Assert_04_urunFavEkleSil_01_urunFavSil_01(), "Urun Başarıyla Başarıyla Favorilerden Cikarildi.");
         }
         [Test]
-        //[Test, Category("04_Urun_Favori_Ekle_Test")]
+        //[Test, Category("05_Urun_Sepet_Ekle_Test")]
         public void Test_05_Senaryo_01_UrunSepet_Ekle()
         {
             LCWaikikiMethods urunSepetEkle = new LCWaikikiMethods(Webdriver);
@@ -93,7 +93,7 @@ namespace LCWaikikiTest
             urunSepetEkle.UrunRenk_kirliMavi();
             urunSepetEkle.UrunRenk_bej();
             urunSepetEkle.UrunBeden_34();
-            urunSepetEkle.UrunBoy_31();
+            urunSepetEkle.UrunBoy_Kontrol();
             urunSepetEkle.UrunSepetEkle();
             urunSepetEkle.UrunSepetim();
             urunSepetEkle.UrunSiparisTamamlaButton();
