@@ -1,4 +1,4 @@
-﻿//TALHA BEĞENDİ
+//TALHA BEĞENDİ
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +18,6 @@ namespace LCWaikikiTest
         public LCWaikikiMethods(IWebDriver driver)
         {
             this.webDriver = driver;
-        }
-        public void WaitForSleep()
-        {
-            Thread.Sleep(3000);
         }
         public void GirisYap()
         {
@@ -77,21 +73,18 @@ namespace LCWaikikiTest
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunFoto_01));
             element.Click();
-            //WaitForSleep();
         }
         public void UrunFotoDegis_Sag_Button()
         {
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunFotoDegis_Sag_Button));
             element.Click();
-            //WaitForSleep();
         }
         public void UrunFotoDegis_Sol_Button()
         {
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunFotoDegis_Sol_Button));
             element.Click();
-            //WaitForSleep();
         }
         public void UrunFotoKapatButton()
         {
@@ -160,11 +153,47 @@ namespace LCWaikikiTest
             element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBeden_34));
             element.Click();
         }
-        public void UrunBoy_31()
+        public void UrunBoy_29()
         {
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
-            element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBoy_31));
+            element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBoy_29));
             element.Click();
+        }
+        public void UrunBoy_Kontrol()
+        {
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            IWebElement urunBoy_29 = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBoy_29));
+            IWebElement urunBoy_31 = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBoy_31));
+            IWebElement urunBoy_32 = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBoy_32));
+            IWebElement urunBoy_33 = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBoy_33));
+            IWebElement urunBoy_35 = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(kontrolOzellikleri.urunBoy_35));
+            for (int i = 0; i < 5; i++)
+            {
+                if (webDriver.FindElements(kontrolOzellikleri.urunBoy_29_kontrol).Count == 0)
+                {
+                    urunBoy_29.Click();
+                }
+                else if (webDriver.FindElements(kontrolOzellikleri.urunBoy_31_kontrol).Count == 0)
+                {
+                    urunBoy_31.Click();
+                }
+                else if (webDriver.FindElements(kontrolOzellikleri.urunBoy_32_kontrol).Count == 0)
+                {
+                    urunBoy_32.Click();
+                }
+                else if (webDriver.FindElements(kontrolOzellikleri.urunBoy_33_kontrol).Count == 0)
+                {
+                    urunBoy_33.Click();
+                }
+                else if (webDriver.FindElements(kontrolOzellikleri.urunBoy_35_kontrol).Count == 0)
+                {
+                    urunBoy_35.Click();
+                }
+                else
+                {
+                    Thread.Sleep(1500);
+                }
+            }
         }
     }
 }
