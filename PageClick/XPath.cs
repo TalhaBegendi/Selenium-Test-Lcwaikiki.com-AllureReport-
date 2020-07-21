@@ -1,4 +1,4 @@
-﻿//TALHA BEĞENDİ
+//TALHA BEĞENDİ
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,8 +40,24 @@ namespace LCWaikikiTest
         [CacheLookup] public static By urunSec_02 = By.Id("model_674123_3887627");
         [CacheLookup] public static By urunRenk_kirliMavi = By.XPath("//div[@title='Kirli Mavi']");
         [CacheLookup] public static By urunRenk_bej = By.XPath("//div[@title='Bej']");
+
+        [CacheLookup] public static By urunBeden_33 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@size='33']");
         [CacheLookup] public static By urunBeden_34 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@size='34']");
-        [CacheLookup] public static By urunBoy_31 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@size='31']");
+
+        [CacheLookup] public static By urunBoy_29_kontrol = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='29' and @class='disabled']");
+        [CacheLookup] public static By urunBoy_29 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='29']");
+
+        [CacheLookup] public static By urunBoy_31_kontrol = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='31' and @class='disabled']");
+        [CacheLookup] public static By urunBoy_31 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='31']");
+
+        [CacheLookup] public static By urunBoy_32_kontrol = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='32' and @class='disabled']");
+        [CacheLookup] public static By urunBoy_32 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='32']");
+
+        [CacheLookup] public static By urunBoy_33_kontrol = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='33' and @class='disabled']");
+        [CacheLookup] public static By urunBoy_33 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='33']");
+
+        [CacheLookup] public static By urunBoy_35_kontrol = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='35' and @class='disabled']");
+        [CacheLookup] public static By urunBoy_35 = By.XPath("//div[@class='mobile-size-and-cart-container']//a[@height='35']");
 
     }
 }
