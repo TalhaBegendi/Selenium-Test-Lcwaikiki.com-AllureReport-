@@ -1,4 +1,4 @@
-﻿//TALHA BEĞENDİ
+//TALHA BEĞENDİ
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +57,7 @@ namespace LCWaikikiTest
         }
         public bool Assert_04_urunFavEkleSil_01_urunFavEkle_01()
         {
-            Thread.Sleep(300);
+            Thread.Sleep(490);
             if (webDriver.FindElements(kontrolOzellikleriAssert.assert_04_urunFavEkleSil_01_urunFavEkle).Count == 1)
             {
                 return true;
@@ -69,7 +69,7 @@ namespace LCWaikikiTest
         }
         public bool Assert_04_urunFavEkleSil_01_urunFavSil_01()
         {
-            Thread.Sleep(300);
+            Thread.Sleep(490);
             if (webDriver.FindElements(kontrolOzellikleriAssert.assert_04_urunFavEkleSil_01_urunFavSil).Count == 0)
             {
                 return true;
@@ -78,6 +78,12 @@ namespace LCWaikikiTest
             {
                 return false;
             }
+        }
+        public bool Assert_05_urunSepetEkle_01_urunSepetEkle(string urunSepetEkleText)
+        {
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            elementAssert = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(kontrolOzellikleriAssert.assert_05_urunSepetEkle_01_urunSepetEkle));
+            return elementAssert.Text == urunSepetEkleText;
         }
     }
 }
