@@ -12,35 +12,46 @@ using NUnit.Framework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 using Assert = NUnit.Framework.Assert;
+using Allure.Commons;
+using NUnit.Allure.Core;
+using NUnit.Allure.Attributes;
 //TALHA BEĞENDİ
 
 namespace LCWaikikiTest
 {
-    public class ChromeAcilisTrendyol
+    [AllureNUnit]
+    public class ChromeAcilisLCW
     {
         IWebDriver Webdriver;
         [OneTimeSetUp]
-        public void TrendyolGiris()
+        public void LCWlGiris()
         {
+            AllureLifecycle.Instance.CleanupResultDirectory();
             Webdriver = new ChromeDriver();
             Webdriver.Manage().Window.Maximize();
             Webdriver.Navigate().GoToUrl("https://www.lcwaikiki.com/");
             Webdriver.Manage().Cookies.DeleteAllCookies();
         }
         [Test]
-        //[Test, Category("01_Giris_Test")]
+        [Category("01_Giris_Test")]
+        [AllureTag("NUnit", "01_Giris_Test")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("Core")]
         public void Test_01_Senaryo_01_Giris()
         {
             LCWaikikiMethods girisYap = new LCWaikikiMethods(Webdriver);
             LCWaikikiMethodsAssert girisYapAssert = new LCWaikikiMethodsAssert(Webdriver);
             girisYap.GirisYap();
-            girisYap.Email("asd@gmail.com");
+            girisYap.Email("asd123@gmail.com");
             girisYap.Sifre("123456");
             girisYap.GirisYapButton();
             Assert.IsTrue(girisYapAssert.Assert_01_girisYap_01_giris("Hesabım"), "Başarıyla Giris Yapildi");
         }
         [Test]
-        //[Test, Category("02_Urun_Arama_Test")]
+        [Category("02_Urun_Arama_Test")]
+        [AllureTag("NUnit", "02_Urun_Arama_Test")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("Core")]
         public void Test_02_Senaryo_01_UrunArama()
         {
             LCWaikikiMethods urunArama = new LCWaikikiMethods(Webdriver);
@@ -51,7 +62,10 @@ namespace LCWaikikiTest
             Assert.IsTrue(urunAramaAssert.Assert_02_urunArama_01_arama(), "Aranılan Arama Başarıyla Yapildi");
         }
         [Test]
-        //[Test, Category("03_Urun_Secme_Test")]
+        [Category("03_Urun_Secme_Test")]
+        [AllureTag("NUnit", "03_Urun_Secme_Test")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("Core")]
         public void Test_03_Senaryo_01_UrunSecme()
         {
             LCWaikikiMethods urunSecme = new LCWaikikiMethods(Webdriver);
@@ -71,7 +85,10 @@ namespace LCWaikikiTest
             urunSecme.UrunFotoKapatButton();
         }
         [Test]
-        //[Test, Category("04_Urun_Favori_Ekle_Sil_Test")]
+        [Category("04_Urun_Favori_Ekle_Sil_Test")]
+        [AllureTag("NUnit", "04_Urun_Favori_Ekle_Sil_Test")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("Core")]
         public void Test_04_Senaryo_01_UrunFav_Ekle_Sil()
         {
             LCWaikikiMethods urunFavEkleSil = new LCWaikikiMethods(Webdriver);
@@ -83,7 +100,10 @@ namespace LCWaikikiTest
             Assert.IsTrue(urunFavEkleSilAssert.Assert_04_urunFavEkleSil_01_urunFavSil_01(), "Urun Başarıyla Başarıyla Favorilerden Cikarildi.");
         }
         [Test]
-        //[Test, Category("05_Urun_Sepet_Ekle_Test")]
+        [Category("05_Urun_Sepet_Ekle_Test")]
+        [AllureTag("NUnit", "05_Urun_Sepet_Ekle_Test")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("Core")]
         public void Test_05_Senaryo_01_UrunSepet_Ekle()
         {
             LCWaikikiMethods urunSepetEkle = new LCWaikikiMethods(Webdriver);
@@ -97,6 +117,7 @@ namespace LCWaikikiTest
             urunSepetEkle.UrunSepetEkle();
             urunSepetEkle.UrunSepetim();
             urunSepetEkle.UrunSiparisTamamlaButton();
+            Assert.IsTrue(urunSepetEkleAssert.Assert_05_urunSepetEkle_01_urunSepetEkle("Fatura Adresi ve Teslimat Adresi"), "Urun Başarıyla Odeme İşlemine Geçildi");
         }
     }
 }
