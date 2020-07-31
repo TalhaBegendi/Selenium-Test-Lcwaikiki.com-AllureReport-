@@ -1,4 +1,4 @@
-﻿//TALHA BEĞENDİ
+//TALHA BEĞENDİ
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +24,6 @@ namespace LCWaikikiTest
     [CacheLookup] public static By assert_03_fotoSecme_03_foto3 = By.Id("2");
     [CacheLookup] public static By assert_04_urunFavEkleSil_01_urunFavEkle = By.XPath("//div[@class='emi-icons-wrapper']//a[@data-tracking-lastoptionid='1004707']");
     [CacheLookup] public static By assert_04_urunFavEkleSil_01_urunFavSil = By.XPath("//div[@class='emi-icons-wrapper']//a[@data-tracking-lastoptionid='1004707']");
+    [CacheLookup] public static By assert_05_urunSepetEkle_01_urunSepetEkle= By.XPath("//p[@class='invoice-address-title'][text()[contains(.,'Fatura Adresi ve Teslimat Adresi')]]");
     }
 }
