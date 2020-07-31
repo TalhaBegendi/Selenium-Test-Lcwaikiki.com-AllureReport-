@@ -1,6 +1,6 @@
-﻿{
+{
   "allure": {
-    "directory": "allure-results",
+    "directory": "C:\\Users\\Talha BEĞENDİ\\Documents\\Visual Studio 2017\\Projects\\LCWaikikiTest\\LCWaikikiTestProject\\allure-results",
     "links": [
       "https://example.org/{issue}",
       "https://example.org/{tms}"
